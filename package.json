@@ -1,0 +1,25 @@
+{
+  "name": "tailwind-playground",
+  "version": "1.0.0",
+  "description": "A playgound to laod and serve web pages based on tailwind css",
+  "author": "toofani@gmail.com",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "serve": "cross-env NODE_ENV=development concurrently \"postcss public/tailwind.css -o public/build/tailwind.css --watch\"  \"live-server ./public\"",
+    "development": "cross-env NODE_ENV=development postcss public/tailwind.css -o public/build/tailwind.css",
+    "production": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/build/tailwind.css",
+    "start": "npm run serve"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.1",
+    "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "live-server": "^1.2.1",
+    "postcss-cli": "^8.3.1"
+  }
+}
